@@ -91,6 +91,20 @@ export class MyMapComponent implements OnInit, AfterViewInit {
   };
 
   private getLayers(): Leaflet.Layer[] {
-    return [...this.getPolygons()];
+    return [...this.getPolygons(), ...this.getRoutes()];
   }
+
+  getRoutes = (): Leaflet.Polyline[] => {
+    return [
+      new Leaflet.Polyline(
+        [
+          new Leaflet.LatLng(47.22325334675914, 8.81821006536484),
+          new Leaflet.LatLng(47.2232387739193, 8.81908714771271),
+        ] as Leaflet.LatLng[],
+        {
+          color: '#0d9148',
+        } as Leaflet.PolylineOptions
+      ),
+    ] as Leaflet.Polyline[];
+  };
 }
