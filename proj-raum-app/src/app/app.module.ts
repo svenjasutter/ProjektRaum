@@ -15,6 +15,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { HomeComponent } from './views/home/home.component';
 import { OsmBuildingComponent } from './components/osm-building/osm-building.component';
+import { MyMapComponent } from './components/my-map/my-map.component';
+import { MyMap2Component } from './components/my-map2/my-map2.component';
+import { MyMap3Component } from './components/my-map3/my-map3.component';
 // import { OsmbModule } from '@community-garden/osmbuildings';
 
 @NgModule({
@@ -23,6 +26,9 @@ import { OsmBuildingComponent } from './components/osm-building/osm-building.com
     NavComponent,
     HomeComponent,
     OsmBuildingComponent,
+    MyMapComponent,
+    MyMap2Component,
+    MyMap3Component,
   ],
   imports: [
     BrowserModule,
