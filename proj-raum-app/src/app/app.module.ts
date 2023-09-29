@@ -19,6 +19,7 @@ import { MyMapComponent } from './components/my-map/my-map.component';
 import { MyMap2Component } from './components/my-map2/my-map2.component';
 import { MyMap3Component } from './components/my-map3/my-map3.component';
 // import { OsmbModule } from '@community-garden/osmbuildings';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MyMap3Component } from './components/my-map3/my-map3.component';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    LeafletModule,
     // OsmbModule,
   ],
   providers: [],

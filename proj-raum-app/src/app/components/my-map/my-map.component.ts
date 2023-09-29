@@ -6,6 +6,7 @@ import {
   AfterViewInit,
 } from '@angular/core';
 import { Browser, Map, map, tileLayer } from 'leaflet';
+import * as Leaflet from 'leaflet';
 
 @Component({
   selector: 'app-my-map',
@@ -41,6 +42,26 @@ export class MyMapComponent implements OnInit, AfterViewInit {
       id: 'osm-bright',
     } as any).addTo(lefletMap);
 
+    // Polygons layer
+    const layers = this.getLayers();
+    layers.forEach((layer) => {
+      layer.addTo(lefletMap);
+    });
+
+    // Locate position
+    lefletMap.locate({ setView: true, maxZoom: 17 });
+
+    lefletMap.on('locationfound', (e) => {
+      Leaflet.circleMarker(e.latlng)
+        .addTo(lefletMap)
+        .bindPopup('You are here!')
+        .openPopup();
+    });
+
+    lefletMap.on('locationerror', (err) => {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    });
+
     lefletMap.on('click', (event) => {
       const clickedLatitude = event.latlng.lat;
       const clickedLongitude = event.latlng.lng;
@@ -50,5 +71,26 @@ export class MyMapComponent implements OnInit, AfterViewInit {
 
   private handleMapClick(lat: number, lng: number) {
     console.log(`Clicked at Latitude: ${lat}, Longitude: ${lng}`);
+  }
+
+  getPolygons = (): Leaflet.Polygon[] => {
+    return [
+      new Leaflet.Polygon(
+        [
+          new Leaflet.LatLng(47.22325334675914, 8.81821006536484),
+          new Leaflet.LatLng(47.22354207032206, 8.818721026182176),
+          new Leaflet.LatLng(47.2232387739193, 8.81908714771271),
+          new Leaflet.LatLng(47.222948227089354, 8.81857216358185),
+        ] as Leaflet.LatLng[],
+        {
+          fillColor: '#eb530d',
+          color: '#eb780d',
+        } as Leaflet.PolylineOptions
+      ),
+    ] as Leaflet.Polygon[];
+  };
+
+  private getLayers(): Leaflet.Layer[] {
+    return [...this.getPolygons()];
   }
 }
