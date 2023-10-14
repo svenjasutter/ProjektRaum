@@ -20,6 +20,8 @@ import { MyMap2Component } from './components/my-map2/my-map2.component';
 import { MyMap3Component } from './components/my-map3/my-map3.component';
 // import { OsmbModule } from '@community-garden/osmbuildings';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { BuildingInfoComponent } from './components/building-info/building-info.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     MyMapComponent,
     MyMap2Component,
     MyMap3Component,
+    BuildingInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     MatCardModule,
     MatMenuModule,
     LeafletModule,
-    // OsmbModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

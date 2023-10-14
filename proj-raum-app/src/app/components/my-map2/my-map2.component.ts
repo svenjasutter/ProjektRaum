@@ -5,7 +5,9 @@ import {
   ElementRef,
   AfterViewInit,
 } from '@angular/core';
-import { Map, NavigationControl } from 'maplibre-gl';
+
+import { Browser, Map, map, tileLayer } from 'leaflet';
+import * as Leaflet from 'leaflet';
 
 @Component({
   selector: 'app-my-map2',
@@ -15,47 +17,39 @@ import { Map, NavigationControl } from 'maplibre-gl';
 export class MyMap2Component implements OnInit, AfterViewInit {
   @ViewChild('map')
   private mapContainer!: ElementRef<HTMLElement>;
-
   constructor() {}
 
   ngOnInit() {}
 
   ngAfterViewInit() {
-    const myAPIKey = 'af49acf480e74ff483a6b5e8a92a761b';
-    const mapStyle = 'https://maps.geoapify.com/v1/styles/positron/style.json';
+    const initialState = { lng: 8.817145, lat: 47.222894, zoom: 17 };
 
-    const initialState = { lng: 8.817145, lat: 47.222894, zoom: 16, pitch: 45 }; // Added pitch for 3D perspective
+    const lefletMap: Map = map(this.mapContainer.nativeElement).setView(
+      [initialState.lat, initialState.lng],
+      initialState.zoom
+    );
 
-    const map = new Map({
-      container: this.mapContainer.nativeElement,
-      style: `${mapStyle}?apiKey=${myAPIKey}`,
-      center: [initialState.lng, initialState.lat],
-      zoom: initialState.zoom,
-      pitch: initialState.pitch, // Set pitch
+    const isRetina = Browser.retina;
+    const baseUrl =
+      'https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=af49acf480e74ff483a6b5e8a92a761b';
+    const retinaUrl =
+      'https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}@2x.png?apiKey=af49acf480e74ff483a6b5e8a92a761b';
+
+    tileLayer(isRetina ? retinaUrl : baseUrl, {
+      attribution: 'Team Raum',
+      apiKey: 'af49acf480e74ff483a6b5e8a92a761b',
+      maxZoom: 20,
+      id: 'osm-bright',
+    } as any).addTo(lefletMap);
+
+    lefletMap.on('click', (event) => {
+      const clickedLatitude = event.latlng.lat;
+      const clickedLongitude = event.latlng.lng;
+      this.handleMapClick(clickedLatitude, clickedLongitude);
     });
+  }
 
-    map.addControl(new NavigationControl());
-
-    // Add terrain for 3D effect after the map is loaded
-    map.on('load', () => {
-      map.addSource('mapbox-dem', {
-        type: 'raster-dem',
-        url: 'mapbox://mapbox.mapbox-terrain-dem-v1',
-        tileSize: 512,
-        maxzoom: 14,
-      });
-      // map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.5 });
-
-      // // Add a sky layer that will show when the map is highly pitched
-      // map.addLayer({
-      //   id: 'sky',
-      //   type: 'sky',
-      //   paint: {
-      //     'sky-type': 'atmosphere',
-      //     'sky-atmosphere-sun': [0.0, 90.0],
-      //     'sky-atmosphere-sun-intensity': 15,
-      //   },
-      // });
-    });
+  private handleMapClick(lat: number, lng: number) {
+    console.log(`Clicked at Latitude: ${lat}, Longitude: ${lng}`);
   }
 }
