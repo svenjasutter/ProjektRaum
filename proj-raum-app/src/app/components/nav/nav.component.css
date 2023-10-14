@@ -7,7 +7,7 @@
 }
 
 .sidenav .mat-toolbar {
-  background: #78044C;
+  background: #78044c;
   color: white;
 }
 
@@ -16,5 +16,15 @@
   top: 0;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.5);
-  color: #78044C;
+  color: #78044c;
+}
+
+.icon {
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.text {
+  vertical-align: middle;
 }
