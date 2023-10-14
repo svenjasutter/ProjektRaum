@@ -28,3 +28,15 @@
 .text {
   vertical-align: middle;
 }
+
+.footer .mat-toolbar {
+  background: #78044C;
+  color: white;
+  margin-left: 200px;
+  font-size: small;
+  height: 200px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

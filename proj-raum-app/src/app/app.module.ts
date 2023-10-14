@@ -23,6 +23,17 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { BuildingInfoComponent } from './components/building-info/building-info.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MapService } from './services/map.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FeedbackComponent } from './views/feedback/feedback.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import {
+  FormControl,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -34,6 +45,7 @@ import { MapService } from './services/map.service';
     MyMap2Component,
     MyMap3Component,
     BuildingInfoComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +60,12 @@ import { MapService } from './services/map.service';
     MatCardModule,
     MatMenuModule,
     LeafletModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule,
+    NgIf,
+    ReactiveFormsModule,
     MatExpansionModule,
   ],
   providers: [MapService],
