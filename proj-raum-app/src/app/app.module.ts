@@ -20,6 +20,12 @@ import { MyMap2Component } from './components/my-map2/my-map2.component';
 import { MyMap3Component } from './components/my-map3/my-map3.component';
 // import { OsmbModule } from '@community-garden/osmbuildings';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import {MatFormFieldModule } from '@angular/material/form-field';
+import { FeedbackComponent } from './views/feedback/feedback.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgIf} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,6 +36,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     MyMapComponent,
     MyMap2Component,
     MyMap3Component,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,9 +51,17 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     MatCardModule,
     MatMenuModule,
     LeafletModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule, 
+    NgIf,
+    ReactiveFormsModule,
     // OsmbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  
+}
