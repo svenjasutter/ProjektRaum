@@ -22,6 +22,7 @@ import { MyMap3Component } from './components/my-map3/my-map3.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { BuildingInfoComponent } from './components/building-info/building-info.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MapService } from './services/map.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     LeafletModule,
     MatExpansionModule,
   ],
-  providers: [],
+  providers: [MapService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

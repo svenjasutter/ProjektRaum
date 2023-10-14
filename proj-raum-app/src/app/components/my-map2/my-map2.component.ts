@@ -8,6 +8,7 @@ import {
 
 import { Browser, Map, map, tileLayer } from 'leaflet';
 import * as Leaflet from 'leaflet';
+import { MapService } from 'src/app/services/map.service';
 
 @Component({
   selector: 'app-my-map2',
@@ -17,7 +18,7 @@ import * as Leaflet from 'leaflet';
 export class MyMap2Component implements OnInit, AfterViewInit {
   @ViewChild('map')
   private mapContainer!: ElementRef<HTMLElement>;
-  constructor() {}
+  constructor(private mapService: MapService) {}
 
   ngOnInit() {}
 
@@ -79,7 +80,7 @@ export class MyMap2Component implements OnInit, AfterViewInit {
       } as Leaflet.PolylineOptions
     );
 
-    polygon.on('click', this.handlePolygonClick);
+    polygon.on('click', this.handlePolygonClick.bind(this));
 
     return [polygon];
   };
@@ -87,6 +88,17 @@ export class MyMap2Component implements OnInit, AfterViewInit {
   private handlePolygonClick(e: any) {
     const polygonName = e.target.options.name;
     console.log(`Polygon ${polygonName} clicked!`);
+
+    const tagMapping: { [key: string]: string } = {};
+    for (let i = 1; i <= 8; i++) {
+      tagMapping[`building${i}`] = `b${i}`;
+    }
+
+    // console.log(tagMapping[polygonName]);
+
+    if (tagMapping[polygonName]) {
+      this.mapService.selectBuilding(tagMapping[polygonName]);
+    }
   }
 
   //#endregion

@@ -1,8 +1,11 @@
 <mat-accordion>
   <mat-expansion-panel *ngFor="let building of buildings">
     <mat-expansion-panel-header>
-      {{ building }}
+      {{ building.name }}
     </mat-expansion-panel-header>
-    <!-- You can add content here if needed -->
+    <p>{{ building.content }}</p>
+    <!-- This displays the content for each building -->
   </mat-expansion-panel>
 </mat-accordion>
+
+<button (click)="expandBuildingByTag('b3')">B3</button>
