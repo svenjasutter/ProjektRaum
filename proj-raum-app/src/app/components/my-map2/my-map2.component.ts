@@ -66,7 +66,7 @@ export class MyMap2Component implements OnInit, AfterViewInit {
   //#region Overlays
 
   getPolygons = (): Leaflet.Polygon[] => {
-    const polygon = new Leaflet.Polygon(
+    const polygon1 = new Leaflet.Polygon(
       [
         new Leaflet.LatLng(47.22325334675914, 8.818200677633287),
         new Leaflet.LatLng(47.22354207032206, 8.818721026182176),
@@ -74,15 +74,34 @@ export class MyMap2Component implements OnInit, AfterViewInit {
         new Leaflet.LatLng(47.222948227089354, 8.81857216358185),
       ] as Leaflet.LatLng[],
       {
-        fillColor: '#eb530d',
-        color: '#eb780d',
-        name: 'building8',
+        fillColor: '#c478a7',
+        color: '#78044c',
+        name: 'building8', // Changed name for distinction
       } as Leaflet.PolylineOptions
     );
 
-    polygon.on('click', this.handlePolygonClick.bind(this));
+    const polygon2 = new Leaflet.Polygon(
+      [
+        new Leaflet.LatLng(47.223712389162806, 8.81637677550316),
+        new Leaflet.LatLng(47.22350381681733, 8.816630244255068),
+        new Leaflet.LatLng(47.223769769183775, 8.817115724086763),
+        new Leaflet.LatLng(47.22394464124561, 8.816914558410646),
+        new Leaflet.LatLng(47.22396285705219, 8.816945403814318),
+        new Leaflet.LatLng(47.223984716011856, 8.816909193992617),
+        new Leaflet.LatLng(47.22397014337308, 8.81688103079796),
+        new Leaflet.LatLng(47.22398107285252, 8.816863596439363),
+      ] as Leaflet.LatLng[],
+      {
+        fillColor: '#c478a7',
+        color: '#78044c',
+        name: 'building1',
+      } as Leaflet.PolylineOptions
+    );
 
-    return [polygon];
+    polygon1.on('click', this.handlePolygonClick.bind(this));
+    polygon2.on('click', this.handlePolygonClick.bind(this));
+
+    return [polygon1, polygon2];
   };
 
   private handlePolygonClick(e: any) {
