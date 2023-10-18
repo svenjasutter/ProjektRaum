@@ -80,7 +80,7 @@ export class MyMap2Component implements OnInit, AfterViewInit {
       } as Leaflet.PolylineOptions
     );
 
-    // polygon1.on('click', this.handlePolygonClick.bind(this));
+    polygon1.on('click', this.handlePolygonClick.bind(this));
 
     return [polygon1];
   };
