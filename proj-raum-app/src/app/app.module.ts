@@ -27,6 +27,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FeedbackComponent } from './views/feedback/feedback.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { NgOptimizedImage } from '@angular/common'
 import {
   FormControl,
   Validators,
@@ -34,6 +35,8 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { ProjectsComponent } from './views/projects/projects.component';
+import { ProjectsInfoComponent } from './components/projects-info/projects-info.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,8 @@ import { NgIf } from '@angular/common';
     MyMap3Component,
     BuildingInfoComponent,
     FeedbackComponent,
+    ProjectsComponent,
+    ProjectsInfoComponent,
   ],
   imports: [
     BrowserModule,

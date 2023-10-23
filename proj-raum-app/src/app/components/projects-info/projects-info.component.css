@@ -1,0 +1,20 @@
+p {
+    float: justify;
+}
+
+.round { 
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%; 
+    text-align: center; 
+    font-size: 30px; 
+    float: right; 
+    font-weight: bold;
+    margin: 50px;
+    
+    /* Change the shape according 
+        to the image */ 
+    shape-outside: circle(); 
+    background-color: Green; 
+    color: white; 
+} 
