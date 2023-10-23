@@ -15,4 +15,13 @@ export class MapService {
     console.log(building);
     this.buildingSelectedSubject.next(building);
   }
+
+  private projectsSelectedSubject = new BehaviorSubject<string>('');
+
+  projectsSelected$ = this.projectsSelectedSubject.asObservable();
+
+  public selectProject(project: string) {
+    console.log(project);
+    this.projectsSelectedSubject.next(project);
+  }
 }
