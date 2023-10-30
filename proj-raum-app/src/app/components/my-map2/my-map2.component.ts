@@ -94,7 +94,7 @@ export class MyMap2Component implements OnInit, AfterViewInit {
       {
         fillColor: '#c478a7',
         color: '#78044c',
-        name: 'building1',
+        name: 'building5',
       } as Leaflet.PolylineOptions
     );
 
