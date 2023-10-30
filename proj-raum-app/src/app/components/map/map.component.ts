@@ -11,11 +11,11 @@ import * as Leaflet from 'leaflet';
 import { MapService } from 'src/app/services/map.service';
 
 @Component({
-  selector: 'app-my-map2',
-  templateUrl: './my-map2.component.html',
-  styleUrls: ['./my-map2.component.css'],
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.css'],
 })
-export class MyMap2Component implements OnInit, AfterViewInit {
+export class MapComponent implements OnInit, AfterViewInit {
   @ViewChild('map')
   private mapContainer!: ElementRef<HTMLElement>;
   constructor(private mapService: MapService) {}
