@@ -18,6 +18,18 @@ export class BuildingInfoComponent {
     });
   }
 
+  ngAfterViewInit(): void {
+    this.panels.forEach((panel, index) => {
+      panel.opened.subscribe(() => {
+        console.log(`Panel with tag ${this.buildings[index].tag} opened`);
+        this.mapService.selectBuilding(this.buildings[index].tag);
+      });
+      panel.closed.subscribe(() => {
+        // console.log(`Panel with tag ${this.buildings[index].tag} closed`);
+      });
+    });
+  }
+
   buildings = [
     { name: 'Gebäude 1', tag: 'b1' },
     { name: 'Gebäude 2', tag: 'b2' },
