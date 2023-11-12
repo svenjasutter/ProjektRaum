@@ -34,6 +34,8 @@ import { ProjectsInfoComponent } from './components/projects-info/projects-info.
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogCampusImageComponent } from './components/dialog-campus-image/dialog-campus-image.component';
 import { DialogCampusComponent } from './components/dialog-campus/dialog-campus.component';
+import { MapProjectsComponent } from './components/map-projects/map-projects.component';
+import { MapProjectsService } from './services/map-projects.service';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { DialogCampusComponent } from './components/dialog-campus/dialog-campus.
     NavComponent,
     HomeComponent,
     MapComponent,
+    MapProjectsComponent,
     BuildingInfoComponent,
     FeedbackComponent,
     ProjectsComponent,
@@ -69,7 +72,7 @@ import { DialogCampusComponent } from './components/dialog-campus/dialog-campus.
     MatExpansionModule,
     MatDialogModule
   ],
-  providers: [MapService],
+  providers: [MapService, MapProjectsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
