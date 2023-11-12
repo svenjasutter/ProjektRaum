@@ -4,11 +4,14 @@ import {
   ViewChild,
   ElementRef,
   AfterViewInit,
+  Inject,
 } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { Browser, Map, map, tileLayer } from 'leaflet';
 import * as Leaflet from 'leaflet';
 import { MapService } from 'src/app/services/map.service';
+import { DialogCampusComponent } from '../dialog-campus/dialog-campus.component';
 
 interface CustomPolylineOptions extends Leaflet.PolylineOptions {
   name?: string;
@@ -24,9 +27,9 @@ export class MapComponent implements OnInit, AfterViewInit {
   @ViewChild('map')
   private mapContainer!: ElementRef<HTMLElement>;
 
-  private lefletMap!: Map; 
+  private lefletMap!: Map;
 
-  constructor(private mapService: MapService) {}
+  constructor(private mapService: MapService, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.mapService.buildingSelected$.subscribe(tag => {
@@ -61,15 +64,29 @@ export class MapComponent implements OnInit, AfterViewInit {
       layers.forEach((layer) => {
           layer.addTo(this.lefletMap);
       });
-  }
-  
+    }
+
     //#endregion
+
+     // Locate position
+    //  this.lefletMap.locate({ setView: true, maxZoom: 17 });
+
+    //  this.lefletMap.on('locationfound', (e) => {
+    //    Leaflet.circleMarker(e.latlng)
+    //      .addTo(this.lefletMap)
+    //      .bindPopup('You are here!')
+    //      .openPopup();
+    //  });
+ 
+    //  this.lefletMap.on('locationerror', (err) => {
+    //    console.warn(`ERROR(${err.code}): ${err.message}`);
+    //  });
 
     //#region debug
     this.lefletMap.on('click', (event) => {
       const clickedLatitude = event.latlng.lat;
       const clickedLongitude = event.latlng.lng;
-      this.handleMapClick(clickedLatitude, clickedLongitude);
+      this.handleMapClick(clickedLongitude, clickedLatitude);
     });
 
     this.lefletMap.on('locationerror', (err) => {
@@ -79,6 +96,74 @@ export class MapComponent implements OnInit, AfterViewInit {
   }
 
   //#region Overlays
+
+  getCircle = (): Leaflet.CircleMarker[] => {
+    
+    const circle1 = new Leaflet.CircleMarker(
+      new Leaflet.LatLng(47.22308393724887, 8.818357586860659),
+      {
+        radius: 10,
+        color: '#B56FC9',
+        fillOpacity: 1,
+        name: "1",
+        interactive: true
+      } as Leaflet.CircleOptions
+    );
+    const circle2 = new Leaflet.CircleMarker(
+      new Leaflet.LatLng(47.223417290931025, 8.81845682859421),
+      {
+        radius: 10,
+        color: '#B56FC9',
+        fillOpacity: 1,
+        name: "2",
+      } as Leaflet.CircleOptions
+    );
+    const circle3 = new Leaflet.CircleMarker(
+      new Leaflet.LatLng(47.22341000453416, 8.818918168544771),
+      {
+        radius: 10,
+        color: '#B56FC9',
+        fillOpacity: 1,
+        name: "3",
+      } as Leaflet.CircleOptions
+    );
+    const circle4 = new Leaflet.CircleMarker(
+      new Leaflet.LatLng(47.223091223690545, 8.818826973438265),
+      {
+        radius: 10,
+        color: '#B56FC9',
+        fillOpacity: 1,
+        name: "4",
+      } as Leaflet.CircleOptions
+    );
+    const circle5 = new Leaflet.CircleMarker(
+      new Leaflet.LatLng(47.223277027615275, 8.81805181503296),
+      {
+        radius: 10,
+        color: '#B56FC9',
+        fillOpacity: 1,
+        name: "5",
+      } as Leaflet.CircleOptions
+    );
+    const circle6 = new Leaflet.CircleMarker(
+      new Leaflet.LatLng( 47.22341911253008, 8.818164467811586),
+      {
+        radius: 10,
+        color: '#B56FC9',
+        fillOpacity: 1,
+        name: "6",
+      } as Leaflet.CircleOptions
+    );
+
+    circle1.on('click', this.handleCircle.bind(this));
+    circle2.on('click', this.handleCircle.bind(this));
+    circle3.on('click', this.handleCircle.bind(this));
+    circle4.on('click', this.handleCircle.bind(this));
+    circle5.on('click', this.handleCircle.bind(this));
+    circle6.on('click', this.handleCircle.bind(this));
+
+    return [circle1, circle2, circle3, circle4, circle5, circle6];
+  }
 
   getPolygons = (): Leaflet.Polygon[] => {
     const polygon8 = new Leaflet.Polygon(
@@ -223,10 +308,16 @@ export class MapComponent implements OnInit, AfterViewInit {
     }
   }
 
+  private handleCircle(e: any) {
+    const circleName = e.target.options.name;
+    console.log(`Circle ${circleName} clicked!`);
+    this.openDialog(circleName);
+  }
+
   //#endregion
 
   private getLayers(): Leaflet.Layer[] {
-    return [...this.getPolygons()]; //, ...this.getRoutes()
+    return [...this.getPolygons(), ...this.getCircle()]; //, ...this.getRoutes()
   }
 
   //#region debug
@@ -273,7 +364,7 @@ export class MapComponent implements OnInit, AfterViewInit {
         break;
     }
     
-
+    // not working yet
     // this.getPolygons().forEach(polygon => {
     //   console.log(polygon.options.name);
     //     if (polygon.options.name === buildingName) {
@@ -297,6 +388,18 @@ export class MapComponent implements OnInit, AfterViewInit {
       this.lefletMap.setView([lat, lng], zoom);
     }
   }
-  
 
+  //#region Dialog
+  openDialog(circleName: string): void {
+    const dialogRef = this.dialog.open(DialogCampusComponent, {
+      // width: '500px',
+      data: { name : circleName}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // handle result if needed
+    });
+  }
+  //#endregion
 }

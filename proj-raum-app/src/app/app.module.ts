@@ -31,6 +31,9 @@ import {
 import { NgIf } from '@angular/common';
 import { ProjectsComponent } from './views/projects/projects.component';
 import { ProjectsInfoComponent } from './components/projects-info/projects-info.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogCampusImageComponent } from './components/dialog-campus-image/dialog-campus-image.component';
+import { DialogCampusComponent } from './components/dialog-campus/dialog-campus.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,8 @@ import { ProjectsInfoComponent } from './components/projects-info/projects-info.
     FeedbackComponent,
     ProjectsComponent,
     ProjectsInfoComponent,
+    DialogCampusImageComponent,
+    DialogCampusComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,7 @@ import { ProjectsInfoComponent } from './components/projects-info/projects-info.
     NgIf,
     ReactiveFormsModule,
     MatExpansionModule,
+    MatDialogModule
   ],
   providers: [MapService],
   bootstrap: [AppComponent],
