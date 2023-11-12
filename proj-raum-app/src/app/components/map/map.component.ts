@@ -260,6 +260,40 @@ export class MapComponent implements OnInit, AfterViewInit {
       } as CustomPolylineOptions
     );
 
+    const polygon2 = new Leaflet.Polygon(
+      [
+          new Leaflet.LatLng(47.22331437048235, 8.818041086196901),
+          new Leaflet.LatLng(47.223371750934135, 8.818138986825945),
+          new Leaflet.LatLng(47.22340089653666, 8.818108141422274),
+          new Leaflet.LatLng(47.22344734730754, 8.81818324327469),
+          new Leaflet.LatLng(47.22340089653666, 8.818235546350481),
+          new Leaflet.LatLng(47.223452812101435, 8.818326741456987),
+          new Leaflet.LatLng(47.22343823931646, 8.818349540233614),
+          new Leaflet.LatLng(47.22349653043237, 8.818447440862657),
+          new Leaflet.LatLng(47.22352476516859, 8.818409889936449),
+          new Leaflet.LatLng(47.22357759140889, 8.818506449460985),
+          new Leaflet.LatLng(47.223672314190694, 8.818391114473345),
+          new Leaflet.LatLng(47.223724229489676, 8.818479627370836),
+          new Leaflet.LatLng(47.22388543983092, 8.818281143903734),
+          new Leaflet.LatLng(47.22383625706692, 8.818179219961168),
+          new Leaflet.LatLng(47.22386540241406, 8.818144351243975),
+          new Leaflet.LatLng(47.22381621963146, 8.818058520555498),
+          new Leaflet.LatLng(47.22384354340519, 8.81802096962929),
+          new Leaflet.LatLng(47.22379709298147, 8.817927092313768),
+          new Leaflet.LatLng(47.22382168438734, 8.81788954138756),
+          new Leaflet.LatLng(47.223777966324555, 8.817797005176546),
+          new Leaflet.LatLng(47.22380164694638, 8.81775811314583),
+          new Leaflet.LatLng(47.22374791013549, 8.817666918039324),
+          new Leaflet.LatLng(47.22371421075174, 8.817696422338487),
+          new Leaflet.LatLng(47.22366593862416, 8.817610591650011),
+      ] as Leaflet.LatLng[],
+      {
+          fillColor: '#c478a7',
+          color: '#78044c',
+          name: 'building2',
+      } as CustomPolylineOptions
+    );
+
     const polygon1 = new Leaflet.Polygon(
       [
           new Leaflet.LatLng(47.22385082974249, 8.817315548658373),
@@ -283,13 +317,14 @@ export class MapComponent implements OnInit, AfterViewInit {
     );
 
     polygon1.on('click', this.handlePolygonClick.bind(this));
+    polygon2.on('click', this.handlePolygonClick.bind(this));
     polygon3.on('click', this.handlePolygonClick.bind(this));
     polygon4.on('click', this.handlePolygonClick.bind(this));
     polygon5.on('click', this.handlePolygonClick.bind(this));
     polygon6.on('click', this.handlePolygonClick.bind(this));
     polygon8.on('click', this.handlePolygonClick.bind(this));
 
-    return [polygon1, polygon3, polygon4, polygon5, polygon6, polygon8];
+    return [polygon1, polygon2, polygon3, polygon4, polygon5, polygon6, polygon8];
   };
 
   private handlePolygonClick(e: any) {
@@ -297,9 +332,16 @@ export class MapComponent implements OnInit, AfterViewInit {
     console.log(`Polygon ${polygonName} clicked!`);
 
     const tagMapping: { [key: string]: string } = {};
-    for (let i = 1; i <= 8; i++) {
+    tagMapping['building1'] = 'b1';
+    tagMapping['building2'] = 'b2';
+    tagMapping['building3'] = 'b3';
+    tagMapping['building4'] = 'b4';
+    tagMapping['building5'] = 'b5';
+    tagMapping['building6'] = 'b6';
+    tagMapping['building8'] = 'b8';
+    /*for (let i = 1; i <= 8; i++) {
       tagMapping[`building${i}`] = `b${i}`;
-    }
+    }*/
 
     // console.log(tagMapping[polygonName]);
 
@@ -342,7 +384,7 @@ export class MapComponent implements OnInit, AfterViewInit {
         this.setMapView(8.817496597766878, 47.22335535652567);
         break;
       case "b2":
-        // this.setMapView(/* longitude for b2 */, /* latitude for b2 */);
+        this.setMapView(8.818105459213259, 47.22362677441286);
         break;
       case "b3":
         this.setMapView(8.81796330213547, 47.222741473359754);
