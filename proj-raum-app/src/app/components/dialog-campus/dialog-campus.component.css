@@ -1,0 +1,14 @@
+.dialog-content{
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    width: auto;
+    height: auto;
+  }
+  
+#close-button{
+    width: 1em;
+    margin-top: 1em;
+}
