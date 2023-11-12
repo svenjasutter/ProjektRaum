@@ -37,7 +37,6 @@ export class BuildingInfoComponent {
     { name: 'Gebäude 4', tag: 'b4' },
     { name: 'Gebäude 5', tag: 'b5' },
     { name: 'Gebäude 6', tag: 'b6' },
-    { name: 'Gebäude 7', tag: 'b7' },
     { name: 'Gebäude 8', tag: 'b8' },
   ];
 
