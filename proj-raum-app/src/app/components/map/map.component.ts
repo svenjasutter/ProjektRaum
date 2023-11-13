@@ -69,18 +69,18 @@ export class MapComponent implements OnInit, AfterViewInit {
     //#endregion
 
      // Locate position
-    //  this.lefletMap.locate({ setView: true, maxZoom: 17 });
+     this.lefletMap.locate({ setView: true, maxZoom: 17 });
 
-    //  this.lefletMap.on('locationfound', (e) => {
-    //    Leaflet.circleMarker(e.latlng)
-    //      .addTo(this.lefletMap)
-    //      .bindPopup('You are here!')
-    //      .openPopup();
-    //  });
+     this.lefletMap.on('locationfound', (e) => {
+       Leaflet.circleMarker(e.latlng)
+         .addTo(this.lefletMap)
+         .bindPopup('You are here!')
+         .openPopup();
+     });
  
-    //  this.lefletMap.on('locationerror', (err) => {
-    //    console.warn(`ERROR(${err.code}): ${err.message}`);
-    //  });
+     this.lefletMap.on('locationerror', (err) => {
+       console.warn(`ERROR(${err.code}): ${err.message}`);
+     });
 
     //#region debug
     this.lefletMap.on('click', (event) => {
