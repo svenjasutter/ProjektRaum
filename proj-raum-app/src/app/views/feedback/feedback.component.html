@@ -13,7 +13,10 @@
         <mat-option value="sonstiges">Sonstiges</mat-option>
       </mat-select>
     </mat-form-field>
-  
+
+    <h4>Sternenbewertung</h4>
+    <star-rating [starType]="'icon'" [rating]="5"></star-rating>
+    
     <h4>Feedbacktext</h4>
     <mat-form-field class="feedback-full-width">
       <mat-label>Feedbacktext</mat-label>
@@ -21,22 +24,22 @@
     </mat-form-field>
 
     <h4>Kontaktdetails</h4>
-    <mat-form-field class="feedback-full-width">
+    <mat-form-field class="feedback-full-width" required>
       <mat-label>Anrede</mat-label>
-      <mat-select required>
+      <mat-select>
         <mat-option value="frau">Frau</mat-option>
         <mat-option value="herr">Herr</mat-option>
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field class="prename">
+    <mat-form-field class="prename" required>
       <mat-label>Vorname</mat-label>
-      <input matInput required>
+      <input matInput>
     </mat-form-field>
 
-    <mat-form-field class="surname">
+    <mat-form-field class="surname" required>
       <mat-label>Nachname</mat-label>
-      <input matInput required>
+      <input matInput>
     </mat-form-field>
 
     <mat-form-field class="feedback-full-width">

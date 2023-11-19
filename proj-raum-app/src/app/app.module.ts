@@ -21,7 +21,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FeedbackComponent } from './views/feedback/feedback.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { NgOptimizedImage } from '@angular/common'
+import { NgOptimizedImage } from '@angular/common';
+import {StarRatingModule} from 'angular-star-rating';
 import {
   FormControl,
   Validators,
@@ -34,6 +35,8 @@ import { ProjectsInfoComponent } from './components/projects-info/projects-info.
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogCampusImageComponent } from './components/dialog-campus-image/dialog-campus-image.component';
 import { DialogCampusComponent } from './components/dialog-campus/dialog-campus.component';
+import { MapProjectsComponent } from './components/map-projects/map-projects.component';
+import { MapProjectsService } from './services/map-projects.service';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,7 @@ import { DialogCampusComponent } from './components/dialog-campus/dialog-campus.
     NavComponent,
     HomeComponent,
     MapComponent,
+    MapProjectsComponent,
     BuildingInfoComponent,
     FeedbackComponent,
     ProjectsComponent,
@@ -67,9 +71,10 @@ import { DialogCampusComponent } from './components/dialog-campus/dialog-campus.
     NgIf,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatDialogModule
+    MatDialogModule,
+    StarRatingModule.forRoot(),
   ],
-  providers: [MapService],
+  providers: [MapService, MapProjectsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

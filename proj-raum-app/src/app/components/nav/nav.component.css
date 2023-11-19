@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 15%;
 }
 
 .sidenav .mat-toolbar {
@@ -32,7 +32,8 @@
 .footer .mat-toolbar {
   background: #78044C;
   color: white;
-  margin-left: 200px;
+  margin-left: 15%;
+  width: 85%;
   font-size: small;
   height: 200px;
 }
