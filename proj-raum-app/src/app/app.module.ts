@@ -21,7 +21,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FeedbackComponent } from './views/feedback/feedback.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { NgOptimizedImage } from '@angular/common'
+import { NgOptimizedImage } from '@angular/common';
+import {StarRatingModule} from 'angular-star-rating';
 import {
   FormControl,
   Validators,
@@ -70,7 +71,8 @@ import { MapProjectsService } from './services/map-projects.service';
     NgIf,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatDialogModule
+    MatDialogModule,
+    StarRatingModule.forRoot(),
   ],
   providers: [MapService, MapProjectsService],
   bootstrap: [AppComponent],

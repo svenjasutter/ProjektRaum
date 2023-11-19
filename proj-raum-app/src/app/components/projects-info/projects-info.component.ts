@@ -1,6 +1,6 @@
 import { Component, ViewChildren, QueryList } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material/expansion';
-import { MapProjectsService } from 'src/app/services/map-projects.service';
+import { MapService } from 'src/app/services/map.service';
 
 @Component({
   selector: 'app-projects-info',
@@ -10,10 +10,10 @@ import { MapProjectsService } from 'src/app/services/map-projects.service';
 export class ProjectsInfoComponent {
   @ViewChildren(MatExpansionPanel) panels!: QueryList<MatExpansionPanel>;
 
-  constructor(private mapProjectsService: MapProjectsService) {}
+  constructor(private mapService: MapService) {}
 
   ngOnInit() {
-    this.mapProjectsService.projectsSelected$.subscribe((tag) => {
+    this.mapService.buildingSelected$.subscribe((tag) => {
       this.expandProjectsByTag(tag);
     });
   }
@@ -22,7 +22,7 @@ export class ProjectsInfoComponent {
     this.panels.forEach((panel, index) => {
       panel.opened.subscribe(() => {
         console.log(`Panel with tag ${this.buildings[index].tag} opened`);
-        this.mapProjectsService.selectBuilding(this.buildings[index].tag);
+        this.mapService.selectBuilding(this.buildings[index].tag);
       });
       panel.closed.subscribe(() => {
         // console.log(`Panel with tag ${this.buildings[index].tag} closed`);
