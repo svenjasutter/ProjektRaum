@@ -37,6 +37,8 @@ import { DialogCampusImageComponent } from './components/dialog-campus-image/dia
 import { DialogCampusComponent } from './components/dialog-campus/dialog-campus.component';
 import { MapProjectsComponent } from './components/map-projects/map-projects.component';
 import { MapProjectsService } from './services/map-projects.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NewsComponent } from './views/news/news.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { MapProjectsService } from './services/map-projects.service';
     ProjectsInfoComponent,
     DialogCampusImageComponent,
     DialogCampusComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +76,7 @@ import { MapProjectsService } from './services/map-projects.service';
     MatExpansionModule,
     MatDialogModule,
     StarRatingModule.forRoot(),
+    MatProgressSpinnerModule
   ],
   providers: [MapService, MapProjectsService],
   bootstrap: [AppComponent],
