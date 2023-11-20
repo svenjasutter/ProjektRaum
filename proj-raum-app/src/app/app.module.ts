@@ -39,6 +39,7 @@ import { MapProjectsComponent } from './components/map-projects/map-projects.com
 import { MapProjectsService } from './services/map-projects.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NewsComponent } from './views/news/news.component';
+import { InfosComponent } from './views/infos/infos.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { NewsComponent } from './views/news/news.component';
     ProjectsInfoComponent,
     DialogCampusImageComponent,
     DialogCampusComponent,
-    NewsComponent
+    NewsComponent,
+    InfosComponent
   ],
   imports: [
     BrowserModule,
