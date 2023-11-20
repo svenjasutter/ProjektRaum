@@ -13,6 +13,14 @@ import * as Leaflet from 'leaflet';
 import { MapService } from 'src/app/services/map.service';
 import { DialogCampusComponent } from '../dialog-campus/dialog-campus.component';
 
+import 'leaflet';
+
+declare module 'leaflet' {
+  interface MarkerOptions {
+    rotationAngle?: number;
+  }
+}
+
 interface CustomPolylineOptions extends Leaflet.PolylineOptions {
   name?: string;
 }
@@ -65,22 +73,36 @@ export class MapComponent implements OnInit, AfterViewInit {
           layer.addTo(this.lefletMap);
       });
     }
-
     //#endregion
 
-     // Locate position
-    //  this.lefletMap.locate({ setView: true, maxZoom: 17 });
+    //#region Location
+    this.lefletMap.locate({ setView: true, maxZoom: 17 });
 
-    //  this.lefletMap.on('locationfound', (e) => {
-    //    Leaflet.circleMarker(e.latlng)
-    //      .addTo(this.lefletMap)
-    //      .bindPopup('You are here!')
-    //      .openPopup();
-    //  });
- 
-    //  this.lefletMap.on('locationerror', (err) => {
-    //    console.warn(`ERROR(${err.code}): ${err.message}`);
-    //  });
+    this.lefletMap.on('locationfound', (e) => {
+      Leaflet.circleMarker(e.latlng)
+        .addTo(this.lefletMap)
+        .bindPopup('Du bist hier!')
+        .openPopup();
+
+      console.log("location", e);
+      if (e.heading !== undefined) { // TODO:  test on phone
+        const arrowIcon = Leaflet.icon({
+          iconUrl: '../../assets/images/arrow.png',
+          iconSize: [30, 30],
+          iconAnchor: [15, 15]
+        });
+
+        Leaflet.marker(e.latlng, {
+          icon: arrowIcon,
+          rotationAngle: e.heading
+        }).addTo(this.lefletMap);
+      }
+    });
+
+    this.lefletMap.on('locationerror', (err) => {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    });
+    //#endregion
 
     //#region debug
     this.lefletMap.on('click', (event) => {
@@ -100,7 +122,7 @@ export class MapComponent implements OnInit, AfterViewInit {
   getCircle = (): Leaflet.CircleMarker[] => {
     
     const circle1 = new Leaflet.CircleMarker(
-      new Leaflet.LatLng(47.22308393724887, 8.818357586860659),
+      new Leaflet.LatLng(47.22303384293513, 8.818438053131105), //47.22308393724887, 8.818357586860659
       {
         radius: 10,
         color: '#B56FC9',
@@ -137,7 +159,7 @@ export class MapComponent implements OnInit, AfterViewInit {
       } as Leaflet.CircleOptions
     );
     const circle5 = new Leaflet.CircleMarker(
-      new Leaflet.LatLng(47.223277027615275, 8.81805181503296),
+      new Leaflet.LatLng(47.22306936436247, 8.818207383155825), //47.223277027615275, 8.81805181503296
       {
         radius: 10,
         color: '#B56FC9',
@@ -444,4 +466,5 @@ export class MapComponent implements OnInit, AfterViewInit {
     });
   }
   //#endregion
+  
 }
