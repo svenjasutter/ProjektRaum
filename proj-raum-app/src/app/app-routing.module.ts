@@ -5,8 +5,9 @@ import { InfosComponent } from './views/infos/infos.component';
 import { NewsComponent } from './views/news/news.component';
 import { FeedbackComponent } from './views/feedback/feedback.component';
 import { ProjectsComponent } from './views/projects/projects.component';
+import { FeedbackProjectComponent } from './views/feedback-projects/feedback-projects.component';
 
-const routes: Routes = [{ path: 'home', component: HomeComponent }, { path: 'projects', component: ProjectsComponent }, { path: 'infos', component: InfosComponent }, { path: 'news', component: NewsComponent }, { path: 'feedback', component: FeedbackComponent }];
+const routes: Routes = [{ path: 'home', component: HomeComponent }, { path: 'projects', component: ProjectsComponent }, { path: 'infos', component: InfosComponent }, { path: 'news', component: NewsComponent }, { path: 'feedback', component: FeedbackComponent }, { path: 'feedback-projects', component: FeedbackProjectComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
