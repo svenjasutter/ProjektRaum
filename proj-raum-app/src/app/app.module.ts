@@ -40,6 +40,10 @@ import { MapProjectsService } from './services/map-projects.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NewsComponent } from './views/news/news.component';
 import { InfosComponent } from './views/infos/infos.component';
+import {FeedbackProjectComponent} from './views/feedback-projects/feedback-projects.component'
+import {FloatLabelType } from '@angular/material/form-field';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +54,7 @@ import { InfosComponent } from './views/infos/infos.component';
     MapProjectsComponent,
     BuildingInfoComponent,
     FeedbackComponent,
+    FeedbackProjectComponent,
     ProjectsComponent,
     ProjectsInfoComponent,
     DialogCampusImageComponent,
@@ -73,6 +78,7 @@ import { InfosComponent } from './views/infos/infos.component';
     MatSelectModule,
     MatInputModule,
     FormsModule,
+    MatRadioModule,
     NgIf,
     ReactiveFormsModule,
     MatExpansionModule,

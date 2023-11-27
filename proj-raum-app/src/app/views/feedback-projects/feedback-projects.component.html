@@ -1,0 +1,86 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Feedback-Formular Bauprojekte</h1>
+  <h4>Bauprojekt</h4>
+  <form class="feedback-form">
+    <mat-form-field class="feedback-full-width">
+      <mat-label>Bauprojekt</mat-label>
+      <mat-select required>
+        <mat-option value="bauprojekt-gebäude-9"
+          >Bauprojekt Gebäude 9</mat-option
+        >
+        <mat-option value="bauprojekt-gebäude-10"
+          >Bauprojekt Gebäude 10</mat-option
+        >
+        <mat-option value="bauprojekt-gebäude-11"
+          >Bauprojekt Gebäude 11</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+
+    <h4>Sternenbewertung</h4>
+    <igc-rating id="starrating" value="ratingVal" min="1" max="5"></igc-rating>
+    <br/>
+
+    <h4>Sind Sie für oder gegen den Bau?</h4>
+    <mat-radio-group required>
+      <mat-radio-button value="yes">Ja ich bin dafür</mat-radio-button>
+      <mat-radio-button value="no">Nein ich bin dagegen</mat-radio-button>
+    </mat-radio-group>
+    <br/>
+
+    <h4>Welcher Zweck für das neue Gebäude ist wünschenswert (Projekte, Anlässe, etc.)?</h4>
+    <mat-form-field class="feedback-full-width">
+      <mat-label>Antwort</mat-label>
+      <textarea matInput placeholder="Antwort..."></textarea>
+    </mat-form-field>
+
+    <h4>Welche Anforderungen an die Umweltverträglichkeit und Nachhaltigkeit wird von dem neuen Gebäude gewünscht?</h4>
+    <mat-form-field class="feedback-full-width">
+      <mat-label>Antwort</mat-label>
+      <textarea matInput placeholder="Antwort..."></textarea>
+    </mat-form-field>
+
+    <h4>Würden Sie gerne mit einer lokalen Gemeinschaft von dem neuen Gebäude profitieren?</h4>
+    <mat-radio-group [formControl]="floatLabelControl">
+      <mat-radio-button value="yes">Ja</mat-radio-button>
+      <mat-radio-button value="no">Nein</mat-radio-button>
+      <mat-radio-button value="possibly">Möglicherweise zu einem späteren Zeitpunkt</mat-radio-button>
+    </mat-radio-group>
+    <br/>
+
+    <h4>Würden Sie gerne als private Person von dem neuen Gebäude profitieren?</h4>
+    <mat-radio-group>
+      <mat-radio-button value="yes">Ja</mat-radio-button>
+      <mat-radio-button value="no">Nein</mat-radio-button>
+      <mat-radio-button value="possibly">Möglicherweise zu einem späteren Zeitpunkt</mat-radio-button>
+    </mat-radio-group>
+    <br/>
+
+    <h4>Kennen Sie spezifische Veranstaltungen welche von diesem Gebäude profitieren könnten und weshalb?</h4>
+    <mat-form-field class="feedback-full-width">
+      <mat-label>Antwort</mat-label>
+      <textarea matInput placeholder="Antwort..."></textarea>
+    </mat-form-field>
+
+    <h4>Inwiefern wünschen Sie sich, dass lokale Unternehmen und Dienstleister an diesem Bauprojekt beteiligt werden?</h4>
+    <mat-form-field class="feedback-full-width">
+      <mat-label>Antwort</mat-label>
+      <textarea matInput placeholder="Antwort..."></textarea>
+    </mat-form-field>
+
+    <h4>Wie gross darf die finanzielle Auswirkung auf öffentliche Finanzen vom Bau betroffen sein?</h4>
+    <mat-form-field class="feedback-full-width">
+      <mat-label>Antwort</mat-label>
+      <textarea matInput placeholder="Antwort..."></textarea>
+    </mat-form-field>
+    
+    <h4>Allgemeines Feedback</h4>
+    <mat-form-field class="feedback-full-width">
+      <mat-label>Feedbacktext</mat-label>
+      <textarea matInput placeholder="Feedback..."></textarea>
+    </mat-form-field>
+
+    <br/>
+    <button mat-raised-button>Senden</button>
+  </form>
+</div>
