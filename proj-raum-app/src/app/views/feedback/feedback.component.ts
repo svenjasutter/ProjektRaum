@@ -1,7 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {
+  FormControl,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 
+defineComponents(IgcRatingComponent);
 
 @Component({
   selector: 'app-feedback',

@@ -1,15 +1,39 @@
 <div class="dialog-content">
-<h1 mat-dialog-title>Gebäude Seitenansicht</h1>
-<div mat-dialog-content [ngSwitch]="data.name" class="dialog-content">
-  <h1>TEST {{data.name}}</h1>
-  <img *ngSwitchCase="1" src="../../../assets/images/dialogImages/test-building-8.png" alt="Image1">
-  <img *ngSwitchCase="2" src="../../../assets/images/dialogImages/building-8-north.jpeg" alt="Image2">
-  <img *ngSwitchCase="3" src="../../../assets/images/dialogImages/building-8-3.jpeg" alt="Image3">
-  <img *ngSwitchCase="4" src="../../../assets/images/dialogImages/building-8-4.jpeg" alt="Image4">
-  <img *ngSwitchCase="5" src="../../../assets/images/dialogImages/building-1.jpeg" alt="Image5">
-  <img *ngSwitchCase="6" src="../../../assets/images/dialogImages/building-2.jpeg" alt="Image6">
-  <img *ngSwitchDefault src="path/to/defaultImage.jpg" alt="Default Image">
+  <h1 mat-dialog-title>Gebäude Seitenansicht</h1>
+  <div mat-dialog-content [ngSwitch]="data.name" class="dialog-content">
+    <!-- <h1>TEST {{data.name}}</h1> -->
+    <img
+      *ngSwitchCase="1"
+      src="../../../assets/images/dialogImages/test-building-8.png"
+      alt="Image1"
+    />
+    <img
+      *ngSwitchCase="2"
+      src="../../../assets/images/dialogImages/building-8-north.jpeg"
+      alt="Image2"
+    />
+    <img
+      *ngSwitchCase="3"
+      src="../../../assets/images/dialogImages/building-8-3.jpeg"
+      alt="Image3"
+    />
+    <img
+      *ngSwitchCase="4"
+      src="../../../assets/images/dialogImages/building-8-4.jpeg"
+      alt="Image4"
+    />
+    <img
+      *ngSwitchCase="5"
+      src="../../../assets/images/dialogImages/building-1.jpeg"
+      alt="Image5"
+    />
+    <img
+      *ngSwitchCase="6"
+      src="../../../assets/images/dialogImages/building-2.jpeg"
+      alt="Image6"
+    />
+    <img *ngSwitchDefault src="path/to/defaultImage.jpg" alt="Default Image" />
 
-  <button mat-button (click)="onNoClick()" id="close-button">Close</button>
-</div>
+    <button mat-button (click)="onNoClick()" id="close-button">Close</button>
+  </div>
 </div>

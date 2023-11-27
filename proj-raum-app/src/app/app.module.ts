@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +22,7 @@ import { FeedbackComponent } from './views/feedback/feedback.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { NgOptimizedImage } from '@angular/common';
-import {StarRatingModule} from 'angular-star-rating';
+import { StarRatingModule } from 'angular-star-rating';
 import {
   FormControl,
   Validators,
@@ -32,7 +32,7 @@ import {
 import { NgIf } from '@angular/common';
 import { ProjectsComponent } from './views/projects/projects.component';
 import { ProjectsInfoComponent } from './components/projects-info/projects-info.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DialogCampusImageComponent } from './components/dialog-campus-image/dialog-campus-image.component';
 import { DialogCampusComponent } from './components/dialog-campus/dialog-campus.component';
 import { MapProjectsComponent } from './components/map-projects/map-projects.component';
@@ -55,7 +55,7 @@ import { InfosComponent } from './views/infos/infos.component';
     DialogCampusImageComponent,
     DialogCampusComponent,
     NewsComponent,
-    InfosComponent
+    InfosComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,9 +78,10 @@ import { InfosComponent } from './views/infos/infos.component';
     MatExpansionModule,
     MatDialogModule,
     StarRatingModule.forRoot(),
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   providers: [MapService, MapProjectsService],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

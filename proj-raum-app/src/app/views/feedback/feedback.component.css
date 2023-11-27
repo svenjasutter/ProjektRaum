@@ -1,6 +1,6 @@
 .grid-container {
+  position: relative;
   margin: 20px;
-  width: 100%;
 }
 
 .dashboard-card {
@@ -44,4 +44,9 @@
 
 .surname {
   width: 45%;
+}
+
+#starrating {
+  width: 40px;
+  height: 40px;
 }

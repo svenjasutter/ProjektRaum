@@ -2,21 +2,26 @@
   <h1 class="mat-h1">Feedback</h1>
   <h4>Feedbackgrund</h4>
   <form class="feedback-form">
-
     <mat-form-field class="feedback-full-width">
       <mat-label>Feedbackgrund</mat-label>
       <mat-select required>
-        <mat-option value="bauprojekt-gebäude-1">Bauprojekt Gebäude 1</mat-option>
-        <mat-option value="bauprojekt-gebäude-6">Bauprojekt Gebäude 6</mat-option>
-        <mat-option value="bauprojekt-spielplatz">Bauprojekt Spielplatz</mat-option>
+        <mat-option value="bauprojekt-gebäude-1"
+          >Bauprojekt Gebäude 1</mat-option
+        >
+        <mat-option value="bauprojekt-gebäude-6"
+          >Bauprojekt Gebäude 6</mat-option
+        >
+        <mat-option value="bauprojekt-spielplatz"
+          >Bauprojekt Spielplatz</mat-option
+        >
         <mat-option value="mensa">Mensa</mat-option>
         <mat-option value="sonstiges">Sonstiges</mat-option>
       </mat-select>
     </mat-form-field>
 
     <h4>Sternenbewertung</h4>
-    <star-rating [starType]="'icon'" [rating]="5"></star-rating>
-    
+    <igc-rating id="starrating" value="ratingVal" min="1" max="5"></igc-rating>
+
     <h4>Feedbacktext</h4>
     <mat-form-field class="feedback-full-width">
       <mat-label>Feedbacktext</mat-label>
@@ -34,21 +39,26 @@
 
     <mat-form-field class="prename" required>
       <mat-label>Vorname</mat-label>
-      <input matInput>
+      <input matInput />
     </mat-form-field>
 
     <mat-form-field class="surname" required>
       <mat-label>Nachname</mat-label>
-      <input matInput>
+      <input matInput />
     </mat-form-field>
 
     <mat-form-field class="feedback-full-width">
       <mat-label>Enter your email</mat-label>
-      <input matInput placeholder="pat@example.com" [formControl]="email" required>
-      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <input
+        matInput
+        placeholder="pat@example.com"
+        [formControl]="email"
+        required
+      />
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
     </mat-form-field>
 
-    <br>
+    <br />
     <button mat-raised-button>Senden</button>
   </form>
 </div>

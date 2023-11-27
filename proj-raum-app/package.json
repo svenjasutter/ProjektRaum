@@ -23,6 +23,8 @@
     "@asymmetrik/ngx-leaflet": "^16.0.1",
     "@community-garden/osmbuildings": "^4.1.1",
     "angular-osm": "^1.2.2",
+    "angular-star-rating": "^7.0.0",
+    "igniteui-webcomponents": "^4.5.0",
     "leaflet": "^1.9.4",
     "maplibre-gl": "^1.15.3",
     "ol": "^8.1.0",
