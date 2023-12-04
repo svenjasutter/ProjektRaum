@@ -1,7 +1,20 @@
+
 .grid-container {
-  position: relative;
-  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
+
+.feedback-form {
+  width: 60%;
+  min-width: 300px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
 
 .dashboard-card {
   position: absolute;
@@ -25,12 +38,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.feedback-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
 }
 
 .feedback-full-width {
