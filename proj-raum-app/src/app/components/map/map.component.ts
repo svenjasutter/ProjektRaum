@@ -132,59 +132,67 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   //#region Overlays
 
-  getCircle = (): Leaflet.CircleMarker[] => {
-    
-    const circle1 = new Leaflet.CircleMarker(
+  getCircle = (): Leaflet.Marker[] => {
+
+    const infoIcon = new Leaflet.Icon({
+      iconUrl: '../../assets/icons/info_blue.png',
+      iconSize: [25, 25], // size of the icon
+      iconAnchor: [12, 12], // point of the icon which will correspond to marker's location
+      popupAnchor: [0, -12] // point from which the popup should open relative to the iconAnchor
+    });
+
+    const circle1 = new Leaflet.Marker(
       new Leaflet.LatLng(47.22303384293513, 8.818438053131105), //47.22308393724887, 8.818357586860659
       {
         radius: 10,
-        color: '#B56FC9',
+        icon: infoIcon,
         fillOpacity: 1,
         name: "1",
         interactive: true
       } as Leaflet.CircleOptions
     );
-    const circle2 = new Leaflet.CircleMarker(
+
+    const circle2 = new Leaflet.Marker(
       new Leaflet.LatLng(47.223417290931025, 8.81845682859421),
       {
         radius: 10,
-        color: '#B56FC9',
+        icon: infoIcon,
         fillOpacity: 1,
         name: "2",
       } as Leaflet.CircleOptions
     );
-    const circle3 = new Leaflet.CircleMarker(
+    const circle3 = new Leaflet.Marker(
       new Leaflet.LatLng(47.22341000453416, 8.818918168544771),
       {
         radius: 10,
-        color: '#B56FC9',
+        icon: infoIcon,
         fillOpacity: 1,
         name: "3",
       } as Leaflet.CircleOptions
     );
-    const circle4 = new Leaflet.CircleMarker(
+    const circle4 = new Leaflet.Marker(
       new Leaflet.LatLng(47.223091223690545, 8.818826973438265),
       {
         radius: 10,
-        color: '#B56FC9',
+        icon: infoIcon,
         fillOpacity: 1,
         name: "4",
       } as Leaflet.CircleOptions
     );
-    const circle5 = new Leaflet.CircleMarker(
+    const circle5 = new Leaflet.Marker(
       new Leaflet.LatLng(47.22306936436247, 8.818207383155825), //47.223277027615275, 8.81805181503296
       {
         radius: 10,
-        color: '#B56FC9',
+        icon: infoIcon,
         fillOpacity: 1,
         name: "5",
       } as Leaflet.CircleOptions
     );
-    const circle6 = new Leaflet.CircleMarker(
+    const circle6 = new Leaflet.Marker(
       new Leaflet.LatLng( 47.22341911253008, 8.818164467811586),
       {
         radius: 10,
-        color: '#B56FC9',
+        icon: infoIcon,
         fillOpacity: 1,
         name: "6",
       } as Leaflet.CircleOptions
@@ -404,16 +412,6 @@ export class MapComponent implements OnInit, AfterViewInit {
   //#endregion debug
 
   highlightBuilding(tag: string) {
-    // const tagMapping: { [key: string]: string } = {};
-    // for (let i = 1; i <= 8; i++) {
-    //     tagMapping[`b${i}`] = `building${i}`;
-    // }
-
-    // const buildingName = tagMapping[tag];
-    // if (!buildingName) return;
-
-    // console.log("MatExpand of " + buildingName);
-
     switch (tag) {
       case "b1":
         this.setMapView(8.817496597766878, 47.22335535652567);
@@ -440,23 +438,6 @@ export class MapComponent implements OnInit, AfterViewInit {
         // Handle any other cases or throw an error if needed
         break;
     }
-    
-    // not working yet
-    // this.getPolygons().forEach(polygon => {
-    //   console.log(polygon.options.name);
-    //     if (polygon.options.name === buildingName) {
-    //         polygon.setStyle({
-    //           fillColor: '#87CEFA',
-    //           color: '#0000CD',
-    //         });
-    //     } else {
-    //         polygon.setStyle({
-    //             fillColor: '#c478a7',
-    //             color: '#78044c',
-    //         });
-    //     }
-    //     console.log(polygon);
-    // });
   }
 
 
