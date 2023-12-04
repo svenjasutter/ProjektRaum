@@ -1,14 +1,17 @@
-.dialog-content{
+.dialog-content {
     display: flex;
     flex-direction: column;
+    max-height: 80vh;
+    overflow: auto;
 }
 
 img {
-    width: 40em;
+    max-width: 100%;
     height: auto;
-  }
-  
-#close-button{
-    width: 1em;
+    max-height: 65vh;
+}
+
+#close-button {
     margin-top: 1em;
+    align-self: center;
 }
