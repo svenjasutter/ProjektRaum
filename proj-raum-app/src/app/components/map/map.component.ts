@@ -14,10 +14,11 @@ import { MapService } from 'src/app/services/map.service';
 import { DialogCampusComponent } from '../dialog-campus/dialog-campus.component';
 
 import 'leaflet';
+import 'leaflet-rotatedmarker';
 
 declare module 'leaflet' {
-  interface MarkerOptions {
-    rotationAngle?: number;
+  interface Marker {
+    setRotationAngle(angle: number): this;
   }
 }
 
@@ -34,6 +35,7 @@ interface CustomPolylineOptions extends Leaflet.PolylineOptions {
 export class MapComponent implements OnInit, AfterViewInit {
   @ViewChild('map')
   private mapContainer!: ElementRef<HTMLElement>;
+  private arrowMarker: Leaflet.Marker | null = null;
 
   private lefletMap!: Map;
 
@@ -76,28 +78,33 @@ export class MapComponent implements OnInit, AfterViewInit {
     //#endregion
 
     //#region Location
-    this.lefletMap.locate({ setView: true, maxZoom: 17 });
+    this.lefletMap.locate({ watch: true}); //, maxZoom: 17 
 
     this.lefletMap.on('locationfound', (e) => {
-      Leaflet.circleMarker(e.latlng)
-        .addTo(this.lefletMap)
-        .bindPopup('Du bist hier!')
-        .openPopup();
+      this.lefletMap.panTo(e.latlng);
+      console.log(this.lefletMap.getZoom());
+      let zoom = this.lefletMap.getZoom();
+      this.lefletMap.setView(e.latlng, zoom);
 
-      console.log("location", e);
-      if (e.heading !== undefined) { // TODO:  test on phone
-        const arrowIcon = Leaflet.icon({
-          iconUrl: '../../assets/images/arrow.png',
-          iconSize: [30, 30],
-          iconAnchor: [15, 15]
-        });
+      const arrowIcon = Leaflet.icon({
+        iconUrl: '../../assets/images/arrow.png',
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+      });
 
-        Leaflet.marker(e.latlng, {
-          icon: arrowIcon,
-          rotationAngle: e.heading
+      if (!this.arrowMarker) {
+        this.arrowMarker = new Leaflet.Marker(e.latlng, {
+          icon: arrowIcon
         }).addTo(this.lefletMap);
+      } else {
+        this.arrowMarker.setLatLng(e.latlng);
       }
     });
+
+    // Listen to device orientation changes
+    window.addEventListener('deviceorientation', this.handleOrientation.bind(this), true);
+
+
 
     this.lefletMap.on('locationerror', (err) => {
       console.warn(`ERROR(${err.code}): ${err.message}`);
@@ -115,6 +122,12 @@ export class MapComponent implements OnInit, AfterViewInit {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     });
     //#endregion debug
+  }
+
+  private handleOrientation(event: DeviceOrientationEvent) {
+    if (this.arrowMarker && event.alpha !== null) {
+      this.arrowMarker.setRotationAngle(360-event.alpha);
+    }
   }
 
   //#region Overlays
