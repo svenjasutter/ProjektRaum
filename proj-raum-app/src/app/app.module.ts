@@ -33,7 +33,6 @@ import { NgIf } from '@angular/common';
 import { ProjectsComponent } from './views/projects/projects.component';
 import { ProjectsInfoComponent } from './components/projects-info/projects-info.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogCampusImageComponent } from './components/dialog-campus-image/dialog-campus-image.component';
 import { DialogCampusComponent } from './components/dialog-campus/dialog-campus.component';
 import { MapProjectsComponent } from './components/map-projects/map-projects.component';
 import { MapProjectsService } from './services/map-projects.service';
@@ -57,7 +56,6 @@ import {MatRadioModule} from '@angular/material/radio';
     FeedbackProjectComponent,
     ProjectsComponent,
     ProjectsInfoComponent,
-    DialogCampusImageComponent,
     DialogCampusComponent,
     NewsComponent,
     InfosComponent,

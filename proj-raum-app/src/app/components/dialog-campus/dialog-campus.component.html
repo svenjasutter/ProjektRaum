@@ -1,39 +1,33 @@
-<div class="dialog-content">
-  <h1 mat-dialog-title>Gebäude Seitenansicht</h1>
-  <div mat-dialog-content [ngSwitch]="data.name" class="dialog-content">
-    <!-- <h1>TEST {{data.name}}</h1> -->
-    <img
-      *ngSwitchCase="1"
-      src="../../../assets/images/dialogImages/test-building-8.png"
-      alt="Image1"
-    />
-    <img
-      *ngSwitchCase="2"
-      src="../../../assets/images/dialogImages/building-8-north.jpeg"
-      alt="Image2"
-    />
-    <img
-      *ngSwitchCase="3"
-      src="../../../assets/images/dialogImages/building-8-3.jpeg"
-      alt="Image3"
-    />
-    <img
-      *ngSwitchCase="4"
-      src="../../../assets/images/dialogImages/building-8-4.jpeg"
-      alt="Image4"
-    />
-    <img
-      *ngSwitchCase="5"
-      src="../../../assets/images/dialogImages/g1.png"
-      alt="Image5"
-    />
-    <img
-      *ngSwitchCase="6"
-      src="../../../assets/images/dialogImages/building-2.jpeg"
-      alt="Image6"
-    />
-    <img *ngSwitchDefault src="path/to/defaultImage.jpg" alt="Default Image" />
+<div mat-dialog-content [ngSwitch]="data.name" class="dialog-content">
 
-    <button mat-button (click)="onNoClick()" id="close-button">Close</button>
+  <div *ngSwitchCase="1">
+    <h1 mat-dialog-title>Gebäude 8</h1>
+    <img src="../../../assets/images/dialogImages/test-building-8.png" alt="Image1" />
   </div>
+
+  <div *ngSwitchCase="2">
+    <h1 mat-dialog-title>Gebäude 8</h1>
+    <img src="../../../assets/images/dialogImages/building-8-north.jpeg" alt="Image2" />
+  </div>
+
+  <div *ngSwitchCase="3">
+    <h1 mat-dialog-title>Gebäude 8</h1>
+    <img src="../../../assets/images/dialogImages/building-8-3.jpeg" alt="Image3" />
+  </div>
+
+  <div *ngSwitchCase="4">
+    <h1 mat-dialog-title>Gebäude 8</h1>
+    <img src="../../../assets/images/dialogImages/building-8-4.jpeg" alt="Image4" />
+  </div>
+
+  <div *ngSwitchCase="5">
+    <h1 mat-dialog-title>Gebäude 1</h1>
+    <img src="../../../assets/images/dialogImages/g1.png" alt="Image5" />
+  </div>
+
+  <div *ngSwitchCase="6">
+    <h1 mat-dialog-title>Gebäude 2</h1>
+    <img src="../../../assets/images/dialogImages/building-2.jpeg" alt="Image6" />
+  </div>
+  <button mat-button (click)="onNoClick()" id="close-button">Close</button>
 </div>
