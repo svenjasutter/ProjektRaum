@@ -1,9 +1,322 @@
-<mat-accordion>
-  <mat-expansion-panel *ngFor="let building of buildings">
+<mat-accordion class="buildinginfo">
+  <mat-expansion-panel tag="b1">
     <mat-expansion-panel-header>
-      {{ building.name }}
+      Gebäude 1 - Schulgebäude Mitte
     </mat-expansion-panel-header>
-    <p>{{ building.content }}</p>
-    <!-- This displays the content for each building -->
+    <h1>Herzlich willkommen am Gebäude 1</h1>
+  </mat-expansion-panel>
+  <mat-expansion-panel tag="b2">
+    <mat-expansion-panel-header>
+      Gebäude 2 - Laborgebäude
+    </mat-expansion-panel-header>
+    <h1>Herzlich willkommen am Gebäude 2</h1>
+  </mat-expansion-panel>
+  <mat-expansion-panel tag="b3">
+    <mat-expansion-panel-header>
+      Gebäude 3 - Hörsaalgebäude
+    </mat-expansion-panel-header>
+    <h1>Herzlich willkommen am Gebäude 3</h1>
+  </mat-expansion-panel>
+  <mat-expansion-panel tag="b4">
+    <mat-expansion-panel-header>
+      Gebäude 4 - Verwaltungsgebäude
+    </mat-expansion-panel-header>
+    <h1>Herzlich willkommen am Gebäude 4</h1>
+  </mat-expansion-panel>
+  <mat-expansion-panel tag="b5">
+    <mat-expansion-panel-header>
+      Gebäude 5 - Foyergebäude
+    </mat-expansion-panel-header>
+    <h1>Herzlich willkommen am Gebäude 5</h1>
+  </mat-expansion-panel>
+  <mat-expansion-panel tag="b6">
+    <mat-expansion-panel-header>
+      Gebäude 6 - Schulgebäude See
+    </mat-expansion-panel-header>
+    <h1>Herzlich willkommen am Gebäude 6</h1>
+  </mat-expansion-panel>
+  <mat-expansion-panel tag="b8" class="gebaeude8">
+    <mat-expansion-panel-header>
+      Gebäude 8 - Forschungszentrum
+    </mat-expansion-panel-header>
+    <table>
+      <tr>
+        <td class="content-cell">
+            <div>
+            <h1>Herzlich willkommen am Gebäude 8,</h1><br><br>
+            <p> das jüngste in Rapperswill! Hier gibt es einiges zu entdecken und zu snacken (wir sagen nur ✨Forschungsbar✨): im Gebäude wird eine Menge geforscht, gelehrt und besprochen. Verschiedene Institute finden hier ihren Platz – unter anderem das Institut für Software oder auch das Institut für Produktdesign, Entwicklung und Konstruktion. Mehr zu den Forschungsprojekten der Institute gibt’s auf einem Rundgang durch die Flure des Gebäudes. Auch einige Studierende, zum Beispiel dem Bachelor Bauingenierwesen oder dem Master Civil Engineering haben Teile ihrer Lehre in Gebäude 8. Auch zu ihnen erfahren wir auf unserem digitalen Rundweg noch ein wenig mehr.</p>
+          </div>
+            <img src="assets/images/building-8.jpeg" class="round">
+          </td>
+    </tr>
+    <h1>Umbebung:</h1>
+    <tr>
+     
+        <td class="content-cell">
+            <div>
+            
+            
+       
+           <h2>Forschungsbar mit Terasse</h2><br><br> <p>
+              Die Forschungsbar bietet Platz für ein gemeinsames Essen, zum Pause-machen auf der Terrasse und zum Treffen von anderen Personen. Von April bis September gibt es jeweils von 10.30 bis 14.00 feine Gerichte zur Stärkung für die Mittagspause. </p>
+            </div>
+              <img src="assets/images/bistro.jpeg" class="round">
+        </td>
+    </tr>
+    <tr>
+        <td class="content-cell">
+          <div>
+            <h2>Weg zum See</h2>
+            <br><br>
+            <p>Hier geht’s direkt zum Seeweg – die OST Rapperswil liegt direkt am Zürichsee und schafft dadurch viele Möglichkeiten zum Sport- und Pause machen: eine Runde schwimmen, ein Snack an den Ufern des Sees oder ein Spaziergang entlang des Seedamms.  
+    
+              P.S. Hier finden sich auch feinste Wanderwege, eine kleine Empfehlung gibt’s <a href="https://schweizmobil.ch/de/wanderland/route-849">hier</a>.</p>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="content-cell">
+          <div>
+            <h2>Mikro-Wald als Experimentierfeld</h2><br><br>
+            <p>Direkt am Platz befindet sich ein Mikro-Wald: hier lassen Studierende der Landschaftsarchitektur einen Miyawaki-Wald entstehen – ein autarkes Ökosystem auf kleinstem Raum. Dieser Mikro-Wald soll jedoch nicht nur wichtige ökologische Funktionen erfüllen, sondern gleichermassen als Lern-, Beobachtungs- und Experimentierfläche für verschiedene Disziplinien zur Verfügung stehen. Merh über den Wald kannst du bei einem Spaziergang vorbei erfahren. Das lohnt sich! <a href="https://www.youtube.com/watch?v=MM6RBTnN7TA">Video</a> </p>
+          </div>
+            <img src="assets/images/garden.jpeg" class="round">
+        </td>
+    </tr>
+    <tr>
+        <td class="content-cell">
+          <div>
+            <h2>Platz vor dem Gebäude 8</h2><br><br>        
+            <p>  Der Platz vor Gebäude 8 lädt ein als Treffpunkt und ist gleichzeitig Begegnungsraum. Auf dem öffentlichen Platz gibt es manchmal einiges zu entdecken, zum Beispiel den Office Caravan, der hier im Oktober 2023 Halt gemacht hat. Schau doch gerne nochmal vorbei, wer weiß welche Entdeckungen es hier in den nächsten Wochen gibt.  
+              Und wenn dich der Office caravan auch schon ganz neugierig gemacht hat, dann empfehlen wir einen Klick <a href="https://officecaravan.ch/">hier</a>. 
+              Und vielleicht findest du ja auch deine kleine Office-Umgebung zum Lernen oder Arbeiten an der OST in Raperswill.  </p>
+            </div> 
+            <img src="assets/images/gebaude8platz.png" class="round">
+        </td>
+    </tr>
+  </table>
+      <hr>
+      <h1>Stockwerkinformationen</h1>
+      
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Erdgeschoss
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul>
+            <li>Seminarräume</li>
+            <li>Sitzungszimmer</li>
+            <li>Unterrichtsräume</li>
+            <li>WC</li>
+          </ul>
+        </mat-expansion-panel>
+      
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              1. Obergeschoss
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul>
+            <li>Büros</li>
+            <li>ILT</li>
+            <li>IET</li>
+            <li>SPF</li>
+            <li>Seminarraum</li>
+            <li>Sitzungszimmer</li>
+          </ul>
+        </mat-expansion-panel>
+      
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              2. Obergeschoss
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul>
+            <li>Büros</li>
+            <li>IBU</li>
+            <li>IMES</li>
+            <li>IPEK</li>
+            <li>IFS</li>
+            <li>INS</li>
+            <li>Sitzungszimmer</li>
+            <li>WC</li>
+          </ul>
+        </mat-expansion-panel>
+     
+      
+      <br>
+      <hr>
+      
+      <h1>Institute</h1>
+
+      <!-- IMES - Institut für Mikroelektronik und Embedded Systems -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            IMES - Institut für Mikroelektronik und Embedded Systems
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          Das IMES – Institut für Mikroelektronik und Embeded Systems sind die, die das Gerät entwickeln, auf dem du diesen Text gerade liest! Das Institut fokussiert sich auf die Entwicklung und die angewandte Forschung in der Elektronik; und dies auf mikroskopisch kleinem Niveau. Grösse, Leistungsverbrauch oder Geschwindigkeit sind Dinge, die vom Institut optimiert werden. So möchte das Institut neue Massstäbe auf globalem Niveau setzen! 
+          
+          So wurde im IMES letztens eine Matratze entwickelt, die mithilfe von leitenden Schaumstoff-Bahnen deinen Herzschlag im Schlaf messen kann. Etwas für Spitäler, Altersheime, dein Zuhause oder einfach nur gruselig? Entscheide du! 
+  
+          <!-- Bild einfügen!! -->
+  
+          <a href="https://www.ost.ch/de/forschung-und-dienstleistungen/technik/elektrotechnik/imes-institut-fuer-mikroelektronik-und-embedded-systems">Webseite</a>
+          Das IMES befindet sich im Gebäude 8 im zweiten Stock im Raum 8.221.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            IFS - Institut für Software
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          Silicon Valley in Rapperswil? Nicht ganz aber das Institut für Software beschäftigt sich, wie die Firmen im wohl weltberühmtesten Tech-Cluster, mit Softwareentwicklung. Das unterstützt Menschen und Organisationen, die mit Softwareentwicklung zu tun haben und organisiert Konferenzen und Workshops. 
+          
+          Ein aktuelles Projekt im Institut für Software ist das Übersetzen von zweidimensionalen Plänen auf dreidimensionale 3D-gedruckte Objekte, damit Menschen mit Sehbehinderung die Daten ebenfalls lesen und verstehen können. Spannend, nicht? 
+  
+          <!-- Bild einfügen!! -->
+          <a href="https://www.ost.ch/de/forschung-und-dienstleistungen/informatik/ifs-institut-fuer-software">Webseite</a> 
+        </p>
+      </mat-expansion-panel>
+
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            IPEK - Institut für Produktdesign, Entwicklung und Kosntruktion
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          Das Institut für Produktdesign, Entwicklung und Konstruktion befasst sich mit allem rund um ein Produkt. Man könnte sagen, das Institut macht Produkte erfolgreich! An jeder Schraube, die gedreht werden kann, wird gedreht, jede Optimierung, die durchgeführt werden kann, wird umgesetzt und alles, was durchgecheckt und analysiert werden kann wird auf Herz und Nieren geprüft. 
+          
+          Das Institut hat sich vor kurzer Zeit mit der Wasserknappheit auseinandergesetzt, die die Region um Amriswil in Zukunft besonders bettreffen wird. So haben sie in Zusammenarbeit mit anderen Organisationen ein System entwickelt, das den Wasserbedarf überwacht und prognostiziert. So kann Effizienz in den Fokus gerückt werden und das vorhandene Wasser sinnvoll eingesetzt werden. 
+  
+          <!-- Bild einfügen!! -->
+  
+          <a href="https://www.ost.ch/de/forschung-und-dienstleistungen/technik/maschinentechnik/ipek-institut-fuer-produktdesign-entwicklung-und-konstruktion">Webseite</a> 
+          Das IPEk befindet sich im Gebäude 8 im zweiten Stock im Raum 8.222.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            INS - Institut für Netzwerke und Sicherheit
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            IET - Institut für Energietechnik
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            SPF - Institut für Solartechnik
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            IBU - Institut für Bau und Umwelt
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              UMTEC - Institut für Umwelt- und Verfahrenstechnik
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              ILT - Institute for Lab Automation and Mechatronics
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <br>
+      <hr>
+
+      <h1>Studiengänge</h1>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Bachelor Bauingenieurwesen
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          Absolvent*innen des Studiengangs Bauingenieurwesen planen unsere gebaute Umwelt mit viel technischer Expertise – sei es ein neuer Wolkenkratzer mitten in der Stadt, Brücken für den Verkehr oder das neue Einfamilienhaus in Jona.  
+  
+          Im Studium lernen sie wichtige Dinge über Baustatik, Betonbau, Stahlbau und Holzbau. Es geht um die passenden Baustoffe und die Wissenschaft der Geologie als Basis, um Zusammenhänge zur Verkehrsplanung oder auch den Umweltingenieurwissenschaften, um hier nur einige Punkte zu nennen. Einen genaueren Blick ins Studium erhaltet ihr über den folgenden Link: <a href="https://www.youtube.com/watch?v=tSwwgSd0io4&t=7s">Video</a> 
+  
+          Besonders spannend ist außerdem der Blick auf aktuelle Projekte, zum Beispiel zum nachhaltigen Bauen, in dieser Kooperation mit der Burapha-Universität in Thailand wird zum günstigen und nachhaltigen Bauen geforscht: <a href="https://www.youtube.com/watch?v=fBmWkOYBBBE">Video</a> 
+  
+          <a href="https://www.ost.ch/de/studium/architektur-bau-landschaft-raum/bachelor-bauingenieurwesen">Studiengangsinformationen auf der Webseite</a> 
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Bachelor Erneuerbare Energien und Umwelttechnik
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          Im Studiengang Erneuerbare Energien und Umwelttechnik steht die Zukunft unserer Umwelt aus nachhaltiger Perspektive im Mittelpunkt. Mithilfe von mathematischen und naturwissenschaftlichen Grundlagen, konstruktiver Produktentwicklung und Materialtechnologie erhalten die Studierenden ein Grundverständnis, um die Zusammenhänge in der Energie- und Umwelttechnik zu verstehen. Daneben geht es später um Thermo- und Fluiddynamiken. Es werden Blicke Richtung Gebäude- und Solartechnik geworfen, genauso finden Nachhaltigkeitsmanagament und die Elektrische Energietechnik einen Platz in diesem Studiengang. Wenn du einen tieferen Blick ins Studium haben willst, dann klick doch gerne hier:  <a href="https://www.youtube.com/watch?v=9uLRI8MyDuk">Video</a> 
+  
+          Nach dem Studium gibt’s eine Menge Aufgabenfelder für die Absolvent*innen, um eine klimagerechte Zukunft mitzugestalten – so gibt es beispielsweise Arbeit im Feld der erneuerbaren Energieversorgung, der nachhaltigen Material- und Produktionskreisläufe oder in anderen Bereichen der Umwelttechnik.  
+  
+          Mit einem Klick auf das folgende Video kannst du mal in den Arbeitsalltag eines Absolventen rein schnuppern, der dich mit zu seinem Arbeitsplatz an den See nach Uetikon nimmt: <a href="https://www.youtube.com/watch?v=UYLQEihrsok">Video</a> 
+  
+          Außerdem gibt’s auch die Absolventin Martina de Giovanni, die ihren Blick so festhält: 
+  
+          «Der Einstieg ins Berufsleben ist mir unmittelbar nach dem Studium gelungen. Nun bin ich in einem Ingenieur- und Planerbüro vor allem im Bereich Abfall und Energie tätig. Das sehr breit gefächerte EEU-Studium in Rapperswil kommt mir heute zugute. So konnte ich in verschiedensten Gebieten wie zum Beispiel Kehrichtverbrennung, Photovoltaik und Klärschlammbehandlung mein Wissen einsetzen und weiterentwickeln. Auch durch die im Studium gesammelten Erfahrungen war ich auf das selbstständige Einarbeiten in neue Fachbereiche gut vorbereitet. Zusammenarbeiten in Teams und Tätigkeiten im Projektmanagement konnte ich ebenfalls bereits im Studium trainieren.» - Martina de Giovanni, Absolventin Erneuerbare Energien und Umwelttechnik, Ingenieurin bei TBF + Partner AG (<a href="https://www.ost.ch/de/studium/technik/bachelor-erneuerbare-energien-und-umwelttechnik/karriere">Quelle</a>)
+  
+          <a href="https://www.ost.ch/de/studium/technik/bachelor-erneuerbare-energien-und-umwelttechnik">Studiengangsinformationen auf der Webseite</a> 
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Master Medical Engineering
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          Nicht nur Bachelorstudierende sind im Gebäude 8 anzutreffen, sondern auch Masterstudierende – zum Beispiel im Feld der Medizintechnik. Die Studierenden haben die Möglichkeit in unterschiedlichen Bereichen Spezialist*in zu werden in einem der vier Themenbereiche: Biomedizinische Technik, Digitale Gesundheitssysteme, Medizinische Diagnostik oder im Feld des Marktzugangs für Medizinprodukte.  
+  
+          Nach dem Studium haben die Absolvent*innen die Möglichkeit einen Arbeitsplatz im Bereich der Medizintechnik zu finden und an diesem die Zukunft in dieser Branche mitzugestalten – sei es in einem Unternehmen, in der Forschung oder in Kliniken. Eine Absolventin erzählt hierzu genaueres: 
+  
+          <b>Zitat eines Studierenden:</b>
+          “Im Masterstudium konnte ich die theoretischen Kenntnisse aus dem Bachelor in der Mechanik, Elektrotechnik und Informatik sowie auch in der Biomechanik weiter vertiefen. Die notwendigen Kompetenzen für eine strukturierte Durchführung von Projekten erlernte ich durch den starken Praxisbezug des MSE. Zudem profitierte ich von spannenden Einblicken in interdisziplinäre und zukunftsorientierte Projekte.” - Dario Bee, Product Development Engineer, Auxivo AG 
+          (<a href="https://www.ost.ch/de/studium/technik/master-of-science-in-engineering-mse/profile/mse-medical-engineering">Quelle</a>)
+  
+          <a href="https://www.ost.ch/de/studium/technik/master-of-science-in-engineering-mse/profile/mse-medical-engineering">Studiengangsinformationen auf der Webseite</a> 
+        </p>
+      </mat-expansion-panel>
   </mat-expansion-panel>
 </mat-accordion>

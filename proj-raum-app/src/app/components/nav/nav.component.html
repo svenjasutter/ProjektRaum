@@ -9,9 +9,13 @@
   >
     <mat-toolbar>Projekt Raum</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/home">
+      <a mat-list-item routerLink="/">
         <img src="../../../assets/icons/map.png" alt="Map" class="icon" />
         <span class="text">Map</span>
+      </a>
+      <a mat-list-item routerLink="/projects">
+        <img src="../../../assets/icons/projects.png" alt="Projects" class="icon" />
+        <span class="text">Building Projects</span>
       </a>
       <a mat-list-item routerLink="/infos">
         <img src="../../../assets/icons/info.png" alt="Info" class="icon" />
@@ -28,6 +32,14 @@
           class="icon"
         />
         <span class="text">Feedback</span>
+      </a>
+      <a mat-list-item routerLink="/feedback-projects">
+        <img
+          src="../../../assets/icons/feedback.png"
+          alt="Feedback Bauprojekte"
+          class="icon"
+        />
+        <span class="text">Feedback Bauprojekte</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>

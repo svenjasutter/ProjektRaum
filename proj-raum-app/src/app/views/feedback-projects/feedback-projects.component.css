@@ -1,0 +1,59 @@
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.feedback-form {
+  width: 90%;
+  min-width: 300px;
+  max-width: 1000px;
+  margin: 0 auto; 
+}
+
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+
+.feedback-full-width {
+  width: 100%;
+}
+
+.prename {
+  width: 45%;
+  margin-right: 10%;
+}
+
+.surname {
+  width: 45%;
+}
+
+#starrating {
+  width: 40px;
+  height: 40px;
+}

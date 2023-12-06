@@ -1,3 +1,56 @@
 <div class="grid-container">
   <h1 class="mat-h1">Feedback</h1>
+  <h4>Feedbackgrund</h4>
+  <form class="feedback-form">
+    <mat-form-field class="feedback-full-width">
+      <mat-label>Feedbackgrund</mat-label>
+      <mat-select required>
+        <mat-option value="building-8">Gebäude 8</mat-option>
+        <mat-option value="mensa">Mensa</mat-option>
+        <mat-option value="sonstiges">Sonstiges</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <h4>Sternenbewertung</h4>
+    <igc-rating id="starrating" value="ratingVal" min="1" max="5"></igc-rating>
+
+    <h4>Feedbacktext</h4>
+    <mat-form-field class="feedback-full-width">
+      <mat-label>Feedbacktext</mat-label>
+      <textarea matInput placeholder="Feedback..." required></textarea>
+    </mat-form-field>
+
+    <h4>Kontaktdetails</h4>
+    <mat-form-field class="feedback-full-width" required>
+      <mat-label>Anrede</mat-label>
+      <mat-select>
+        <mat-option value="frau">Frau</mat-option>
+        <mat-option value="herr">Herr</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="prename" required>
+      <mat-label>Vorname</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <mat-form-field class="surname" required>
+      <mat-label>Nachname</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <mat-form-field class="feedback-full-width">
+      <mat-label>Enter your email</mat-label>
+      <input
+        matInput
+        placeholder="pat@example.com"
+        [formControl]="email"
+        required
+      />
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <br />
+    <button mat-raised-button>Senden</button>
+  </form>
 </div>

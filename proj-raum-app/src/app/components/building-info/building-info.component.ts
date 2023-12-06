@@ -18,15 +18,26 @@ export class BuildingInfoComponent {
     });
   }
 
+  ngAfterViewInit(): void {
+    this.panels.forEach((panel, index) => {
+      panel.opened.subscribe(() => {
+        console.log(`Panel with tag ${this.buildings[index].tag} opened`);
+        this.mapService.selectBuilding(this.buildings[index].tag);
+      });
+      panel.closed.subscribe(() => {
+        // console.log(`Panel with tag ${this.buildings[index].tag} closed`);
+      });
+    });
+  }
+
   buildings = [
-    { name: 'Gebäude 1', content: 'Information zu Gebäude 1.', tag: 'b1' },
-    { name: 'Gebäude 2', content: 'Information zu Gebäude 2.', tag: 'b2' },
-    { name: 'Gebäude 3', content: 'Information zu Gebäude 3.', tag: 'b3' },
-    { name: 'Gebäude 4', content: 'Information zu Gebäude 4.', tag: 'b4' },
-    { name: 'Gebäude 5', content: 'Information zu Gebäude 5.', tag: 'b5' },
-    { name: 'Gebäude 6', content: 'Information zu Gebäude 6.', tag: 'b6' },
-    { name: 'Gebäude 7', content: 'Information zu Gebäude 7.', tag: 'b7' },
-    { name: 'Gebäude 8', content: 'Information zu Gebäude 8.', tag: 'b8' },
+    { name: 'Gebäude 1', tag: 'b1' },
+    { name: 'Gebäude 2', tag: 'b2' },
+    { name: 'Gebäude 3', tag: 'b3' },
+    { name: 'Gebäude 4', tag: 'b4' },
+    { name: 'Gebäude 5', tag: 'b5' },
+    { name: 'Gebäude 6', tag: 'b6' },
+    { name: 'Gebäude 8', tag: 'b8' },
   ];
 
   expandBuildingByTag(tag: string) {

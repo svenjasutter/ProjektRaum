@@ -1,4 +1,10 @@
 <div class="grid-container">
   <h1 class="mat-h1">News</h1>
-  Test
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <iframe 
+    src="https://www.ost.ch/de/aktuelles/news#infobox" 
+    frameborder="0"
+    (load)="hideLoader()"
+    [style.display]="isLoading ? 'none' : 'block'">
+  </iframe>
 </div>

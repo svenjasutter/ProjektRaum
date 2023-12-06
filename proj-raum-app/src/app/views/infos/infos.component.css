@@ -1,21 +1,20 @@
 .grid-container {
+  position: relative;
+  height: 100vh;
   margin: 20px;
 }
 
-.dashboard-card {
+.loader {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100; /* Ensures it's above the iframe */
 }
 
-.more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
+iframe {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  border: none; /* Removes the border */
 }
 
-.dashboard-card-content {
-  text-align: center;
-}
