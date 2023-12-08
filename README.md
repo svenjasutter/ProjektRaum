@@ -82,31 +82,32 @@ E -- Kartenantwort --> C
 ### Datenquellen
 
 Die Datenquellen für CampusExplorer sind die folgenden:
-### Die Datenbank enthält die Informationen über die Gebäude, Räume, Dienstleistungen, Veranstaltungen und Feedbacks, die auf der Plattform angezeigt werden. Die Datenbank wird regelmässig aktualisiert, um die Änderungen auf dem Campus widerzuspiegeln.
 
-### Der Kartenanbieter ist Leaflet, ein führendes Open-Source-JavaScript-Bibliothek für interaktive Karten. Leaflet bietet viele Funktionen für die Erstellung und Anpassung von Karten, wie zum Beispiel die Standortbestimmung, die Suche, die Navigation, die Visualisierung und die Animation. Leaflet verwendet die Daten aus der Datenbank, um die Karten zu erstellen und zu aktualisieren.
+- Die Datenbank enthält die Informationen über die Gebäude, Räume, Dienstleistungen, Veranstaltungen und Feedbacks, die auf der Plattform angezeigt werden. Die Datenbank wird regelmässig aktualisiert, um die Änderungen auf dem Campus widerzuspiegeln.
 
-### Die Nutzer sind die Quelle für die Eingaben, die auf der Plattform gemacht werden. Die Nutzer können über den Webbrowser auf die Plattform zugreifen und verschiedene Aktionen ausführen, wie zum Beispiel die Kartenansicht anpassen, nach Gebäuden, Räumen oder Dienstleistungen suchen, Feedback geben oder an Umfragen, Abstimmungen und Diskussionen teilnehmen.
+- Der Kartenanbieter ist Leaflet, ein führendes Open-Source-JavaScript-Bibliothek für interaktive Karten. Leaflet bietet viele Funktionen für die Erstellung und Anpassung von Karten, wie zum Beispiel die Standortbestimmung, die Suche, die Navigation, die Visualisierung und die Animation. Leaflet verwendet die Daten aus der Datenbank, um die Karten zu erstellen und zu aktualisieren.
+
+- Die Nutzer sind die Quelle für die Eingaben, die auf der Plattform gemacht werden. Die Nutzer können über den Webbrowser auf die Plattform zugreifen und verschiedene Aktionen ausführen, wie zum Beispiel die Kartenansicht anpassen, nach Gebäuden, Räumen oder Dienstleistungen suchen, Feedback geben oder an Umfragen, Abstimmungen und Diskussionen teilnehmen.
 
 ### README Verzeichnis
 
 Das README Verzeichnis enthält die Datei README.md, die die wichtigsten Informationen über das Projekt CampusExplorer enthält. Die README.md Datei ist in Markdown formatiert und kann mit einem Texteditor oder einem Markdown-Editor bearbeitet werden. Die README.md Datei sollte folgende Abschnitte enthalten:
 
-### Einführung: Eine kurze Beschreibung des Projekts und seiner Funktionen.
+- Einführung: Eine kurze Beschreibung des Projekts und seiner Funktionen.
 
-### Hintergrund und Bedürfnisse: Eine Erläuterung der Motivation und der Ziele des Projekts.
+- Hintergrund und Bedürfnisse: Eine Erläuterung der Motivation und der Ziele des Projekts.
 
-### Funktionen: Eine Auflistung der Hauptfunktionen der Plattform und ihrer Vorteile für die Nutzer.
+- Funktionen: Eine Auflistung der Hauptfunktionen der Plattform und ihrer Vorteile für die Nutzer.
 
-### Mögliche Weiterentwicklungen: Eine Beschreibung der geplanten oder potenziellen Erweiterungen oder Verbesserungen der Plattform.
+- Mögliche Weiterentwicklungen: Eine Beschreibung der geplanten oder potenziellen Erweiterungen oder Verbesserungen der Plattform.
 
-### Prozess Architektur: Eine Darstellung der Prozess Architektur des Projekts und der beteiligten Komponenten und Datenquellen.
+- Prozess Architektur: Eine Darstellung der Prozess Architektur des Projekts und der beteiligten Komponenten und Datenquellen.
 
-### Installation und Bedienung: Eine Anleitung für die Installation und Bedienung der Plattform, einschliesslich der erforderlichen Software und Hardware.
+- Installation und Bedienung: Eine Anleitung für die Installation und Bedienung der Plattform, einschliesslich der erforderlichen Software und Hardware.
 
-### Verwendete Technologien: Eine Auflistung der verwendeten Technologien und gegebenenfalls Links zu weiteren Informationen zu den Technologien.
+- Verwendete Technologien: Eine Auflistung der verwendeten Technologien und gegebenenfalls Links zu weiteren Informationen zu den Technologien.
 
-### Lizenz und Urheberrecht: Eine Angabe der Lizenz und des Urheberrechts für das Projekt und die verwendeten Ressourcen.
+- Lizenz und Urheberrecht: Eine Angabe der Lizenz und des Urheberrechts für das Projekt und die verwendeten Ressourcen.
 
 Quelle: Leaflet - a JavaScript library for interactive maps. https://leafletjs.com/. : Leaflet features. https://leafletjs.com/features.html.
 
@@ -174,6 +175,8 @@ CampusExplorer, obwohl innovativ, hat einige Herausforderungen:
 ### Benutzerakzeptanz: Aufgrund der Neuheit möglicherweise nicht von allen Benutzern sofort akzeptiert.
 
 ## Zukunftspotenzial
+
+CampusExplorer ist eine innovative und digitale Lösung, die die Nutzererfahrung und die Zufriedenheit der Nutzer verbessert, die Bürgerbeteiligung und das Engagement der Nutzer fördert, die Attraktivität und die Sichtbarkeit des Campus erhöht, die Nachhaltigkeit und die Effizienz des Campus verbessert und den eigenen Beitrag zur Forschung leistet. CampusExplorer hat ein grosses Zukunftspotenzial, um sich weiterzuentwickeln und an die Veränderungen der Anforderungen und der Nutzeranzahl anzupassen. Mögliche Weiterentwicklungen sind die Implementierung einer RESTful Architektur, die eine standardisierte Schnittstelle für die Kommunikation zwischen den verschiedenen Komponenten bietet, die Nutzung von mehreren Microservices, die jeweils eine bestimmte Funktion erfüllen und unabhängig voneinander skaliert und aktualisiert werden können, die Integration von neuesten Technologien und Methoden für die Erstellung und Anpassung von Karten, die Analyse und Verarbeitung von Daten, die Nutzung von Künstlicher Intelligenz und die Integration von anderen Systemen, die Nutzung eines Kubernetes Clusters, der eine gute Skalierbarkeit und Verfügbarkeit gewährleistet, die Verwendung von Angular Material Design als Framework für die Benutzeroberfläche und Leaflet als Kartenanbieter, die Speicherung der Daten in einer SQL Datenbank und die Abfrage der Daten mit regulären SQL-Statements, sowie die Implementierung einer 3D-Darstellung des Campus, die Integration von spielerischen Elementen, Chatbots, Sprachassistenten, Augmented Reality und Virtual Reality, sowie die Erweiterung um neue Gebäude und Räume. CampusExplorer ist eine Plattform, die den Campus der OST auf eine neue und spannende Weise präsentiert und erlebbar macht.
 
 Die webbasierte CampusExplorer-Lösung ist ein innovatives Projekt, das sich mit der Vision einer intelligenten urbanen Zukunft in Einklang bringt. Es ermöglicht Gemeindemitgliedern, aktiv am Entscheidungsprozess teilzunehmen, und bietet ein interaktives, informatives Erlebnis. CampusExplorer steht kurz davor, die Art und Weise zu revolutionieren, wie wir mit Bildungseinrichtungen und Stadtplanung interagieren.
 
