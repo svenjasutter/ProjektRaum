@@ -1,5 +1,9 @@
 # ProjektRaum: CampusExplorer
 
+![campusexplorer](https://github.com/svenjasutter/ProjektRaum/assets/43755867/080c0e1e-f369-40b2-bc98-fb8ef76de6fb)
+![campusexplorer2](https://github.com/svenjasutter/ProjektRaum/assets/43755867/b56d28e6-f8e4-4853-a691-7fc7c2c45029)
+
+
 ## Einführung
 
 CampusExplorer ist eine wegweisende, webbasierte Plattform, die es Nutzern ermöglicht, den OST-Campus in Rapperswil-Jona interaktiv zu erkunden und sich aktiv an der Weiterentwicklung des Campus zu beteiligen. Die Plattform setzt der Fokus auf benutzerfreundlichen Funktionen, die eine effiziente Erkundung des Campus ermöglichen und relevante Informationen leicht zugänglich machen.
